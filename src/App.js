@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Sidebar from "./components/Sidebar";
+import Chat from "./components/Chat";
+import { Switch,BrowserRouter as Router, Route } from "react-router-dom";
+import Login from "./Login";
+import {useStateValue} from './StateProvider'
+
 
 function App() {
+  const {user} = useStateValue()[0]
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    // BEM Naming  convention
+    <div className="app">
+    {!user ? (
+      <Login/>
+    ):
+      <div className="app__body">
+        <Router>
+          <Sidebar/>
+          <Switch>
+          <Route path="/rooms/:roomId"> 
+              <Chat />
+            </Route>
+            <Route path="/">
+                <h1>Home Page</h1>
+            </Route>      
+          </Switch>
+        </Router>
+      </div>}
     </div>
-  );
+    );
 }
 
 export default App;
+
+
+//  https://whats-app-clone-c7ac0.web.app
