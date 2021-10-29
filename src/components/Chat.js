@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Avatar, IconButton } from "@material-ui/core";
 import classes from "./Chat.module.css";
 import SearchOutLined from "@material-ui/icons/Search";
-import SendIcon from '@material-ui/icons/Send';
+import SendIcon from "@material-ui/icons/Send";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import AttachFileIcon from "@material-ui/icons/AttachFile";
 import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
@@ -112,7 +112,13 @@ const Chat = () => {
             Send a message
           </button>
         </form>
-        {!input?<MicIcon className={iconStyle}/> :<SendIcon className={iconStyle}/>}
+        {!input ? (
+          <MicIcon className={iconStyle} />
+        ) : (
+          <button onClick={sendMessage} type="submit">
+            <SendIcon className={iconStyle} />
+          </button>
+        )}
       </div>
     </div>
   );
