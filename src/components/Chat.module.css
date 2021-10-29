@@ -66,6 +66,13 @@
     overflow-y: scroll;
 }
 
+.chat__body::-webkit-scrollbar {
+    width: 0.5rem;
+    height:2rem;
+    background-color: rgba(173, 170, 170, 0.534);
+    border-radius: 3rem;
+}
+
 .chat__footer {
     display: flex;
     justify-content: space-between;
@@ -84,6 +91,10 @@
     border-radius: 30px;
     padding: 10px;
     border: none;
+}
+
+.chat__footer > form> input:focus {
+    outline: none;
 }
 
 .chat__footer> form > button {

@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     flex: 0.35;
-    overflow-y: scroll;
+    
 }
 
 .sidebar__search {
@@ -53,4 +53,13 @@
 .sidebar__chats {
     flex: 1;
     background-color: white;
+    overflow-y: scroll;
+    box-sizing: border-box;
+}
+
+.sidebar__chats::-webkit-scrollbar{
+    width: 0.4rem;
+    height:2rem;
+    background-color: rgba(173, 170, 170, 0.534);
+    border-radius: 3rem;
 }
