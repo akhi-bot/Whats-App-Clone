@@ -101,7 +101,7 @@ const Chat = () => {
 
       <div className={classes.chat__footer}>
         <InsertEmoticonIcon className={iconStyle} />
-        <form action="">
+        <form id='my-form'>
           <input
             type="text"
             placeholder="Type a message"
@@ -115,9 +115,9 @@ const Chat = () => {
         {!input ? (
           <MicIcon className={iconStyle} />
         ) : (
-          <button onClick={sendMessage} type="submit">
+          <IconButton onClick={sendMessage} type="submit" form='my-form'>
             <SendIcon className={iconStyle} />
-          </button>
+          </IconButton>
         )}
       </div>
     </div>
